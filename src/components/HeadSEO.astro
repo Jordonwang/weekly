@@ -4,7 +4,7 @@ export interface Props {
   content: any;
   pageURL: URL | string;
 }
-const { icon,keywords,author,twitterId,homePage } =SITE;
+const { icon,keywords,author,homePage } =SITE;
 const { content = {}, pageURL } = Astro.props;
 const pageTitle = content.title ? `${SITE.title}${content.title}` : SITE.title;
 const imageSrc = content.twitterImg || SITE.pic;
@@ -15,7 +15,6 @@ const description = content.description ? content.description : SITE.description
 <meta name="twitter:image" content={imageSrc} />
 <meta name="twitter:site" content={homePage} />
 <meta property="twitter:url" content={pageURL} />
-<meta name="twitter:creator" content={`@${twitterId}`} />
 <meta property="twitter:description" content={description} />
 
 <meta name="keywords" content={keywords}/>
